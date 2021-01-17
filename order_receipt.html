@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Payment Gateway Integration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" integrity="sha512-f8mUMCRNrJxPBDzPJx3n+Y5TC5xp6SmStstEfgsDXZJTcxBakoB5hvPLhAfJKa9rCvH+n3xpJ2vQByxLk4WP2g==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&family=Trade+Winds&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/payment.css" />
+</head>
+<body>
+    <div class="container" >
+     
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-12 col-lg-11 col-xl-10">
+                <div class="card card0">
+                    <div class="row">
+                        <div class="col-md-4 d-block p-0 box">
+                            <div class="card rounded-0 border-0 card1 pr-xl-4 pr-lg-3">
+                                <div class="row justify-content-center">
+                                    <div class="col-11">
+                                        <h3 class="text-center mt-4 mb-4" id="heading0"></h3>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-9 fit-image"> <img src="images/confirmation.svg" height="240px" width="240px"> </div>
+                                </div>
+                            </br>
+                                <div class="col-12 text-center">
+                                    <h6><em>You will receive an email confirmation shortly!</em></h6>
+                                  </div>
+                             
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-12 p-0 box">
+                            <div class="card rounded-0 border-0 card2">
+                                <div class="form-card">
+                                    <h1 id="heading" class="text-center page-heading">Payment Confirmation Receipt</h1>
+                                   
+                                    <div class="row">
+                                       
+                                        <div class="col-12">
+                                          <div class="row">
+                                          </br>
+                                            <div class="col-12 text-center ">
+                                              <h2><em>Thankyou For Trusting Us!</em> </h2>
+                                            </div>
+                                            <div class="col-12 text-center p-1">
+                                              <h5 id = "o-number"></h5>
+                                            </div>
+                                            
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        
+                                      </div>
+                                      <div class="container">
+                                        <div class="row">
+                                          <div class="col-5 text-left" style="margin-left: 0px;">
+                                            <h6>Name:</h6>
+                                            <h6>Card Number:</h6> 
+                                            <h6>Payment Done:</h6>
+                                            <h6>Date of Transaction:</h6>
+                                            <h6>Mail sent to:</h6>
+                                          </div>
+                                          <div class="col-7 text-left">
+                                            <h6 id = "name_of_card"></h6>
+                                            <h6 id = "cardnum_of_user"> </h6>
+                                            <h6>Successful !</h6>
+                                            <h6 id = "date_with_time"></h6>
+                                            <h6 id = "mail_to"></h6>
+                                          </div>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="success.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+</html>

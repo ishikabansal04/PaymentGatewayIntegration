@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Payment Gateway Integration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" integrity="sha512-f8mUMCRNrJxPBDzPJx3n+Y5TC5xp6SmStstEfgsDXZJTcxBakoB5hvPLhAfJKa9rCvH+n3xpJ2vQByxLk4WP2g==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&family=Trade+Winds&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="css/payment.css" />
+</head>
+<body>
+    <div class="container" id="opened">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-12 col-lg-11 col-xl-10">
+                <div class="card card0">
+                    <div class="row">
+                        <div class="col-md-6 d-block p-0 box">
+                            <div class="card rounded-0 border-0 card1 pr-xl-4 pr-lg-3">
+                                <div class="row justify-content-center">
+                                    <div class="col-11">
+                                        <h3 class="text-center mt-4 mb-4" id="heading0">Confirmation details</h3>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-5 fit-image"> <img src="images/payment_page.svg" height="200px" width="200px"> </div>
+                                </div>
+                                
+                        <form action="mail_handler.php" method="post" name="form" class="form-card p-4 pl-5">
+                                
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-12"> <label class="gift">To</label> </div>
+                                                <div class="col-12"> <input class="gift-input" type="text" name="to" id="mail_to" placeholder="Ishika"> </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-12"> <label class="gift">Surname</label> </div>
+                                                <div class="col-12"> <input class="gift-input" type="text" name="from" id="surname" placeholder="Bansal"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12"> <label class="gift">Recipient email</label><br> <input class="gift-input" type="email" id="recipient_mail" name="email" placeholder="ishika@mail.org"> </div>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 p-0 box">
+                            <div class="card rounded-0 border-0 card2">
+                                <div class="form-card">
+                                    <h2 id="heading" class="text-center">Payment Information</h2>
+                                    <div class="radio-group">
+                                        <div class='radio selected' data-value="credit"><img src="images/paypal.png" width="120px" height="70px"></div>
+                                        <div class='radio' data-value="paypal"><img src="images/creditCard.jpg" width="120px" height="70px" margin-left="25px"></div>
+                                        <div class='radio' data-value="netbanking"><img src="images/netbanking.png" width="120px" height="70px"></div>
+                                    </div>
+                                    <h3 id="credit" class="mb-3">Enter your card details</h3> 
+                                    <input type="text" name="holdername" id="cr_name" placeholder="Ishika Bansal">
+                                    <div class="row">
+                                        <div class="col-12"> <input type="text" name="cardno" id="cr_no" placeholder="0000 0000 0000 0000" minlength="19" maxlength="19"> </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-9 col-md-7"> <input type="text" name="exp" id="exp" placeholder="MM/YY" minlength="5" maxlength="5"> </div>
+                                        <div class="col-3 col-md-5"> <input type="password" name="cvcpwd" id="password" placeholder="&#9679;&#9679;&#9679;" class="placeicon" minlength="3" maxlength="3"> </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-12">
+                                            <input type="number" name="amount" id="amount" placeholder="Rs &#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class="placeicon" >
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="bottom">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-10"> <input type="submit" name="submit" value="MAKE A DONATION" class="btn btn-success" onclick="generate_receipt()"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="payment.js"></script>
+    <script type="text/javascript" src="purchase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+</body>
+</html>
